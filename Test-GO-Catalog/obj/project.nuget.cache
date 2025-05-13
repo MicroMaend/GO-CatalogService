@@ -1,13 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "xBJddFFo9+A=",
+  "dgSpecHash": "JcV9Yfz6BWA=",
   "success": true,
   "projectFilePath": "C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\Test-GO-Catalog\\Test-GO-Catalog.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\marcu\\.nuget\\packages\\gocore\\1.0.8\\gocore.1.0.8.nupkg.sha512",
+    "C:\\Users\\marcu\\.nuget\\packages\\gocore\\1.0.9\\gocore.1.0.9.nupkg.sha512",
     "C:\\Users\\marcu\\.nuget\\packages\\microsoft.applicationinsights\\2.22.0\\microsoft.applicationinsights.2.22.0.nupkg.sha512",
+    "C:\\Users\\marcu\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.4\\microsoft.aspnetcore.openapi.9.0.4.nupkg.sha512",
     "C:\\Users\\marcu\\.nuget\\packages\\microsoft.codecoverage\\17.12.0\\microsoft.codecoverage.17.12.0.nupkg.sha512",
     "C:\\Users\\marcu\\.nuget\\packages\\microsoft.net.test.sdk\\17.12.0\\microsoft.net.test.sdk.17.12.0.nupkg.sha512",
+    "C:\\Users\\marcu\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512",
     "C:\\Users\\marcu\\.nuget\\packages\\microsoft.testing.extensions.telemetry\\1.4.3\\microsoft.testing.extensions.telemetry.1.4.3.nupkg.sha512",
     "C:\\Users\\marcu\\.nuget\\packages\\microsoft.testing.extensions.trxreport.abstractions\\1.4.3\\microsoft.testing.extensions.trxreport.abstractions.1.4.3.nupkg.sha512",
     "C:\\Users\\marcu\\.nuget\\packages\\microsoft.testing.extensions.vstestbridge\\1.4.3\\microsoft.testing.extensions.vstestbridge.1.4.3.nupkg.sha512",

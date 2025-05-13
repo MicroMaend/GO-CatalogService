@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GOCore" Version="1.0.8" />
+    <PackageReference Include="GOCore" Version="1.0.9" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.4" />
   </ItemGroup>
 
