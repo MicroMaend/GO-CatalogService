@@ -1,0 +1,6 @@
+@GO_CatalogService_HostAddress = http://localhost:5241
+
+GET {{GO_CatalogService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
