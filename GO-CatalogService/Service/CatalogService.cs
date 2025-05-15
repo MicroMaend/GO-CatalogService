@@ -25,12 +25,13 @@ namespace GO_CatalogService.Service
             }
         }
 
-        public void GetAllItems() 
+        public List<Item> GetAllItems()
         {
             foreach (var item in Items)
             {
                 Console.WriteLine($"Id: {item.Id}, Name: {item.Name}, Description: {item.Description}");
             }
+            return Items; // Ensure the method returns a value as expected.  
         }
         public Item GetItemById(Guid id)
         {
