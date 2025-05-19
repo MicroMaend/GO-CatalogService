@@ -8,7 +8,7 @@ using GO_CatalogService.Interface;
 namespace GO_Bidding.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("catalog")]
 public class CatalogController : ControllerBase
 {
     private readonly ICatalogRepository _catalogRepository;
@@ -18,7 +18,7 @@ public class CatalogController : ControllerBase
         _catalogRepository = catalogRepository;
         _logger = logger;
     }
-    [HttpPost("CreateItem")]
+    [HttpPost("items")]
     public IActionResult CreateItem([FromBody] Item item)
     {
         if (item == null)
@@ -29,25 +29,28 @@ public class CatalogController : ControllerBase
         _catalogRepository.CreateItem(item);
         return Ok();
     }
-    [HttpDelete("DeleteItem")]
-    public IActionResult DeleteItem([FromBody] Item item)
-    {
-        _catalogRepository.DeleteItem(item);
-        return Ok();
-    }
-    [HttpPut("EditItem")]
-    public IActionResult EditItem([FromBody] Item item)
-    {
-        _catalogRepository.EditItem(item);
-        return Ok();
-    }
-    [HttpGet("GetAllItems")]
+    [HttpDelete("items/{id}")]
+public IActionResult DeleteItem(Guid id)
+{
+    _catalogRepository.DeleteItem(id);
+    return Ok();
+}
+
+[HttpPut("items/{id}")]
+public IActionResult EditItem(Guid id, [FromBody] Item updatedItem)
+{
+    updatedItem.Id = id; // hvis nødvendigt
+    _catalogRepository.EditItem(updatedItem);
+    return Ok();
+}
+
+    [HttpGet("items")]
     public IActionResult GetAllItems()
     {
         var items = _catalogRepository.GetAllItems();
         return Ok(items);
     }
-    [HttpGet("GetItemById/{id}")]
+    [HttpGet("items/{id}")]
     public IActionResult GetItemById(Guid id)
     {
         var item = _catalogRepository.GetItemById(id);
@@ -55,7 +58,7 @@ public class CatalogController : ControllerBase
             return NotFound();
         return Ok(item);
     }
-    [HttpGet("GetItemsByCategory/{category}")]
+    [HttpGet("items/category/{category}")]
     public IActionResult GetItemsByCategory(string category)
     {
         var items = _catalogRepository.GetItemsByCategory(category);
