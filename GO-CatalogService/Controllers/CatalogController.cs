@@ -15,31 +15,31 @@ public class CatalogController : ControllerBase
     {
         _catalogRepository = catalogRepository;
     }
-    [HttpPost("CreateItem")]
+    [HttpPost("Item")]
     public IActionResult CreateItem([FromBody] Item item)
     {
         _catalogRepository.CreateItem(item);
         return Ok();
     }
-    [HttpDelete("DeleteItem")]
+    [HttpDelete("Item")]
     public IActionResult DeleteItem([FromBody] Item item)
     {
         _catalogRepository.DeleteItem(item);
         return Ok();
     }
-    [HttpPut("EditItem")]
+    [HttpPut("Item")]
     public IActionResult EditItem([FromBody] Item item)
     {
         _catalogRepository.EditItem(item);
         return Ok();
     }
-    [HttpGet("GetAllItems")]
+    [HttpGet("Items")]
     public IActionResult GetAllItems()
     {
         var items = _catalogRepository.GetAllItems();
         return Ok(items);
     }
-    [HttpGet("GetItemById/{id}")]
+    [HttpGet("Item/{id}")]
     public IActionResult GetItemById(Guid id)
     {
         var item = _catalogRepository.GetItemById(id);
@@ -47,7 +47,7 @@ public class CatalogController : ControllerBase
             return NotFound();
         return Ok(item);
     }
-    [HttpGet("GetItemsByCategory/{category}")]
+    [HttpGet("Items/{category}")]
     public IActionResult GetItemsByCategory(string category)
     {
         var items = _catalogRepository.GetItemsByCategory(category);
