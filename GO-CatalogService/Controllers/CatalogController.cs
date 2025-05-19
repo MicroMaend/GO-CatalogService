@@ -4,6 +4,7 @@ using GO_CatalogService;
 using GO_CatalogService.Service;
 using GO_CatalogService.Repository;
 using GO_CatalogService.Interface;
+
 namespace GO_Bidding.Controllers;
 
 [ApiController]
@@ -11,13 +12,20 @@ namespace GO_Bidding.Controllers;
 public class CatalogController : ControllerBase
 {
     private readonly ICatalogRepository _catalogRepository;
-    public CatalogController(ICatalogRepository catalogRepository)
+    private readonly ILogger<CatalogController> _logger;
+    public CatalogController(ICatalogRepository catalogRepository, ILogger<CatalogController> logger)
     {
         _catalogRepository = catalogRepository;
+        _logger = logger;
     }
     [HttpPost("CreateItem")]
     public IActionResult CreateItem([FromBody] Item item)
     {
+        if (item == null)
+        {
+            _logger.LogError("Item cannot be null");
+            return BadRequest("Item cannot be null");
+        }
         _catalogRepository.CreateItem(item);
         return Ok();
     }
@@ -53,4 +61,5 @@ public class CatalogController : ControllerBase
         var items = _catalogRepository.GetItemsByCategory(category);
         return Ok(items);
     }
+
 }
