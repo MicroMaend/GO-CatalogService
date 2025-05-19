@@ -7,7 +7,7 @@ using GO_CatalogService.Interface;
 namespace GO_Bidding.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("[catalog]")]
 public class CatalogController : ControllerBase
 {
     private readonly ICatalogRepository _catalogRepository;
