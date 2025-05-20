@@ -12,6 +12,7 @@ COPY nuget-packages ./nuget-packages
 RUN dotnet restore "GO-CatalogService/GO-CatalogService.csproj" --configfile ./nuget.config
 
 # Publish
+WORKDIR /src/GO-CatalogService
 RUN dotnet build GO-CatalogService.csproj -c Release -o /app/build
 RUN dotnet publish GO-CatalogService.csproj -c Release -o /app/publish
 
