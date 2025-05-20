@@ -29,7 +29,7 @@ public class CatalogController : ControllerBase
     }
     [HttpPut("Item")]
     public IActionResult EditItem([FromBody] Item item)
-    {
+    {   
         _catalogRepository.EditItem(item);
         return Ok();
     }
