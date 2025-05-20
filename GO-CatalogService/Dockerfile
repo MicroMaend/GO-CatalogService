@@ -5,15 +5,11 @@ WORKDIR /app
 # Copy project and solution files
 COPY . .
 
-# Create a local NuGet packages directory and copy the .nupkg before restore
-RUN mkdir -p /app/nuget-packages
-COPY GOCore.1.1.3.nupkg /app/nuget-packages/
-
-# Copy nuget.config into place
-COPY nuget.config ./nuget.config
+COPY nuget.config ./
+COPY nuget-packages ./nuget-packages
 
 # Restore using custom nuget.config
-RUN dotnet restore --configfile nuget.config
+RUN dotnet restore "GO-CatalogService/GO-CatalogService.csproj" --configfile ./nuget.config
 
 # Publish
 RUN dotnet publish -c Release -o /app/published-app
