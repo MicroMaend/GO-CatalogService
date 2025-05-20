@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\Test-GO-Catalog\\Test-GO-Catalog.csproj": {}
+    "C:\\Users\\Gabriel\\OneDrive\\Skrivebord\\4semEksamen\\GO-AuctionProject\\GO-CatalogService\\Test-GO-Catalog\\Test-GO-Catalog.csproj": {}
   },
   "projects": {
-    "C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\GO-CatalogService\\GO-CatalogService.csproj": {
+    "C:\\Users\\Gabriel\\OneDrive\\Skrivebord\\4semEksamen\\GO-AuctionProject\\GO-CatalogService\\GO-CatalogService\\GO-CatalogService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\GO-CatalogService\\GO-CatalogService.csproj",
+        "projectUniqueName": "C:\\Users\\Gabriel\\OneDrive\\Skrivebord\\4semEksamen\\GO-AuctionProject\\GO-CatalogService\\GO-CatalogService\\GO-CatalogService.csproj",
         "projectName": "GO-CatalogService",
-        "projectPath": "C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\GO-CatalogService\\GO-CatalogService.csproj",
-        "packagesPath": "C:\\Users\\marcu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\GO-CatalogService\\obj\\",
+        "projectPath": "C:\\Users\\Gabriel\\OneDrive\\Skrivebord\\4semEksamen\\GO-AuctionProject\\GO-CatalogService\\GO-CatalogService\\GO-CatalogService.csproj",
+        "packagesPath": "C:\\Users\\Gabriel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Gabriel\\OneDrive\\Skrivebord\\4semEksamen\\GO-AuctionProject\\GO-CatalogService\\GO-CatalogService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\GO-CatalogService\\NuGet.Config",
-          "C:\\Users\\marcu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Gabriel\\OneDrive\\Skrivebord\\4semEksamen\\GO-AuctionProject\\GO-CatalogService\\NuGet.Config",
+          "C:\\Users\\Gabriel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -27,7 +27,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\GO-CatalogService\\nuget-packages": {},
+          "C:\\Users\\Gabriel\\OneDrive\\Skrivebord\\4semEksamen\\GO-AuctionProject\\GO-CatalogService\\nuget-packages": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://nuget.pkg.github.com/MicroMaend/index.json": {}
         },
@@ -47,7 +47,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -59,7 +59,7 @@
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[9.0.5, )"
             },
             "MongoDB.Driver": {
               "target": "Package",
@@ -105,25 +105,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\Test-GO-Catalog\\Test-GO-Catalog.csproj": {
+    "C:\\Users\\Gabriel\\OneDrive\\Skrivebord\\4semEksamen\\GO-AuctionProject\\GO-CatalogService\\Test-GO-Catalog\\Test-GO-Catalog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\Test-GO-Catalog\\Test-GO-Catalog.csproj",
+        "projectUniqueName": "C:\\Users\\Gabriel\\OneDrive\\Skrivebord\\4semEksamen\\GO-AuctionProject\\GO-CatalogService\\Test-GO-Catalog\\Test-GO-Catalog.csproj",
         "projectName": "Test-GO-Catalog",
-        "projectPath": "C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\Test-GO-Catalog\\Test-GO-Catalog.csproj",
-        "packagesPath": "C:\\Users\\marcu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\Test-GO-Catalog\\obj\\",
+        "projectPath": "C:\\Users\\Gabriel\\OneDrive\\Skrivebord\\4semEksamen\\GO-AuctionProject\\GO-CatalogService\\Test-GO-Catalog\\Test-GO-Catalog.csproj",
+        "packagesPath": "C:\\Users\\Gabriel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Gabriel\\OneDrive\\Skrivebord\\4semEksamen\\GO-AuctionProject\\GO-CatalogService\\Test-GO-Catalog\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\GO-CatalogService\\NuGet.Config",
-          "C:\\Users\\marcu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Gabriel\\OneDrive\\Skrivebord\\4semEksamen\\GO-AuctionProject\\GO-CatalogService\\NuGet.Config",
+          "C:\\Users\\Gabriel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -132,7 +132,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\GO-CatalogService\\nuget-packages": {},
+          "C:\\Users\\Gabriel\\OneDrive\\Skrivebord\\4semEksamen\\GO-AuctionProject\\GO-CatalogService\\nuget-packages": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://nuget.pkg.github.com/MicroMaend/index.json": {}
         },
@@ -140,8 +140,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\GO-CatalogService\\GO-CatalogService.csproj": {
-                "projectPath": "C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\GO-CatalogService\\GO-CatalogService.csproj"
+              "C:\\Users\\Gabriel\\OneDrive\\Skrivebord\\4semEksamen\\GO-AuctionProject\\GO-CatalogService\\GO-CatalogService\\GO-CatalogService.csproj": {
+                "projectPath": "C:\\Users\\Gabriel\\OneDrive\\Skrivebord\\4semEksamen\\GO-AuctionProject\\GO-CatalogService\\GO-CatalogService\\GO-CatalogService.csproj"
               }
             }
           }
@@ -156,7 +156,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -195,7 +195,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
