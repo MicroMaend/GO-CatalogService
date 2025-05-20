@@ -1,22 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\",
+  "WorkspaceRootPath": "C:\\Users\\marcu\\Desktop\\4. Semester\\Projekt\\GO-CatalogService\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\Test-GO-Catalog\\Test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Test-GO-Catalog\\Test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\GO-CatalogService\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GO-CatalogService\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\GO-CatalogService\\GO-CatalogService.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\marcu\\Desktop\\4. Semester\\Projekt\\GO-CatalogService\\GO-CatalogService\\GO-CatalogService.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GO-CatalogService\\GO-CatalogService.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\GO-CatalogService\\GO-CatalogService.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\marcu\\Desktop\\4. Semester\\Projekt\\GO-CatalogService\\GO-CatalogService\\GO-CatalogService.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GO-CatalogService\\GO-CatalogService.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\marcu\\Desktop\\4. Semester\\Projekt\\GO-CatalogService\\Test-GO-Catalog\\Test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Test-GO-Catalog\\Test1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,24 +30,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\GO-CatalogService\\Program.cs",
-              "RelativeDocumentMoniker": "GO-CatalogService\\Program.cs",
-              "ToolTip": "C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\GO-CatalogService\\Program.cs",
-              "RelativeToolTip": "GO-CatalogService\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T07:05:38.324Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "GO-CatalogService.http",
-              "DocumentMoniker": "C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\GO-CatalogService\\GO-CatalogService.http",
+              "DocumentMoniker": "C:\\Users\\marcu\\Desktop\\4. Semester\\Projekt\\GO-CatalogService\\GO-CatalogService\\GO-CatalogService.http",
               "RelativeDocumentMoniker": "GO-CatalogService\\GO-CatalogService.http",
-              "ToolTip": "C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\GO-CatalogService\\GO-CatalogService.http",
+              "ToolTip": "C:\\Users\\marcu\\Desktop\\4. Semester\\Projekt\\GO-CatalogService\\GO-CatalogService\\GO-CatalogService.http",
               "RelativeToolTip": "GO-CatalogService\\GO-CatalogService.http",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
@@ -60,23 +43,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "GO-CatalogService.csproj",
-              "DocumentMoniker": "C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\GO-CatalogService\\GO-CatalogService.csproj",
+              "DocumentMoniker": "C:\\Users\\marcu\\Desktop\\4. Semester\\Projekt\\GO-CatalogService\\GO-CatalogService\\GO-CatalogService.csproj",
               "RelativeDocumentMoniker": "GO-CatalogService\\GO-CatalogService.csproj",
-              "ToolTip": "C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\GO-CatalogService\\GO-CatalogService.csproj",
+              "ToolTip": "C:\\Users\\marcu\\Desktop\\4. Semester\\Projekt\\GO-CatalogService\\GO-CatalogService\\GO-CatalogService.csproj",
               "RelativeToolTip": "GO-CatalogService\\GO-CatalogService.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-05-14T06:45:17.457Z"
+              "WhenOpened": "2025-05-14T06:45:17.457Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Test1.cs",
-              "DocumentMoniker": "C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\Test-GO-Catalog\\Test1.cs",
+              "DocumentMoniker": "C:\\Users\\marcu\\Desktop\\4. Semester\\Projekt\\GO-CatalogService\\Test-GO-Catalog\\Test1.cs",
               "RelativeDocumentMoniker": "Test-GO-Catalog\\Test1.cs",
-              "ToolTip": "C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\Test-GO-Catalog\\Test1.cs",
+              "ToolTip": "C:\\Users\\marcu\\Desktop\\4. Semester\\Projekt\\GO-CatalogService\\Test-GO-Catalog\\Test1.cs",
               "RelativeToolTip": "Test-GO-Catalog\\Test1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
