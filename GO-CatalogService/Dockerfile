@@ -1,23 +1,28 @@
-# Stage 1: Build
-FROM mcr.microsoft.com/dotnet/sdk:9.0-alpine AS build
+# Base image
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
+EXPOSE 80
 
-# Copy project and solution files
-COPY . .
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
 
+# Copy csproj og nuget konfiguration
 COPY nuget.config ./
 COPY nuget-packages ./nuget-packages
+COPY GO-CatalogService/GO-CatalogService.csproj GO-CatalogService/
 
-# Restore using custom nuget.config
+# Restore using local NuGet source
 RUN dotnet restore "GO-CatalogService/GO-CatalogService.csproj" --configfile ./nuget.config
 
-# Publish
+# Copy the rest of the code
+COPY . .
+
+# Build og publish
 WORKDIR /src/GO-CatalogService
 RUN dotnet build GO-CatalogService.csproj -c Release -o /app/build
 RUN dotnet publish GO-CatalogService.csproj -c Release -o /app/publish
 
-# Stage 2: Runtime
-FROM mcr.microsoft.com/dotnet/aspnet:9.0-alpine AS runtime
+FROM base AS final
 WORKDIR /app
 COPY --from=build /app/publish .
-ENTRYPOINT ["dotnet", "/app/GO-CatalogService.dll"]
+ENTRYPOINT ["dotnet", "GO-CatalogService.dll"]
