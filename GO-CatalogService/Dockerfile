@@ -17,5 +17,5 @@ RUN dotnet publish -c Release -o /app/published-app
 # Stage 2: Runtime
 FROM mcr.microsoft.com/dotnet/aspnet:9.0-alpine AS runtime
 WORKDIR /app
-COPY --from=build /app/published-app /app
+COPY --from=build /app/publish .
 ENTRYPOINT ["dotnet", "/app/GO-CatalogService.dll"]
