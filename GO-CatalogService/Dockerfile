@@ -12,7 +12,8 @@ COPY nuget-packages ./nuget-packages
 RUN dotnet restore "GO-CatalogService/GO-CatalogService.csproj" --configfile ./nuget.config
 
 # Publish
-RUN dotnet publish -c Release -o /app/published-app
+RUN dotnet build GO-CatalogService.csproj -c Release -o /app/build
+RUN dotnet publish GO-CatalogService.csproj -c Release -o /app/publish
 
 # Stage 2: Runtime
 FROM mcr.microsoft.com/dotnet/aspnet:9.0-alpine AS runtime
