@@ -22,9 +22,9 @@ namespace GO_CatalogService.Repository
         {
             _items.InsertOne(item);
         }
-        public void DeleteItem(Item item)
+        public void DeleteItem(Guid id)
         {
-            _items.DeleteOne(i => i.Id == item.Id);
+            _items.DeleteOne(i => i.Id == id);
         }
         public void EditItem(Item item)
         {
