@@ -8,7 +8,7 @@ on:
 
 jobs:
   test:
-    name: Kør .NET tests
+    name: Run MSTests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -16,16 +16,16 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '9.0' 
+          dotnet-version: '8.0.x' # tilpas hvis I bruger en anden version
 
       - name: Gendan afhængigheder
-        run: dotnet restore Test-GO-Catalog/Test-GO-Catalog.csproj
+        run: dotnet restore GO-CatalogService/GO-CatalogService.sln
 
-      - name: Build testprojekt
-        run: dotnet build Test-GO-Catalog/Test-GO-Catalog.csproj --no-restore --configuration Release
+      - name: Build løsning
+        run: dotnet build GO-CatalogService/GO-CatalogService.sln --no-restore --configuration Release
 
       - name: Kør tests
-        run: dotnet test Test-GO-Catalog/Test-GO-Catalog.csproj --no-build --configuration Release --logger "trx"
+        run: dotnet test GO-CatalogService/GO-CatalogService.sln --no-build --configuration Release --logger "trx"
 
   build_and_push:
     name: Build og push Docker image
