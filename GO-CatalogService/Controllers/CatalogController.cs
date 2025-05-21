@@ -1,24 +1,28 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using GOCore;
-using GO_CatalogService;
 using GO_CatalogService.Service;
-using GO_CatalogService.Repository;
 using GO_CatalogService.Interface;
+using Microsoft.AspNetCore.Authorization; // Tilføjet for [Authorize]
 
-namespace GO_Bidding.Controllers;
+namespace GO_Bidding.Controllers; // Bemærk: Namespace er GO_Bidding.Controllers, ikke GO_CatalogService.Controllers
 
 [ApiController]
 [Route("catalog")]
+[Authorize] // Kræver et gyldigt JWT for alle endpoints i denne controller
 public class CatalogController : ControllerBase
 {
     private readonly ICatalogRepository _catalogRepository;
     private readonly ILogger<CatalogController> _logger;
+
     public CatalogController(ICatalogRepository catalogRepository, ILogger<CatalogController> logger)
     {
         _catalogRepository = catalogRepository;
         _logger = logger;
     }
+
+    // Opret item - Kun admins
     [HttpPost("items")]
+    [Authorize(Roles = "Admin")] // Kun brugere i "Admin" rollen kan tilgå dette endpoint
     public IActionResult CreateItem([FromBody] Item item)
     {
         if (item == null)
@@ -26,31 +30,51 @@ public class CatalogController : ControllerBase
             _logger.LogError("Item cannot be null");
             return BadRequest("Item cannot be null");
         }
+        // Du kan overveje at tilføje mere validering her, f.eks. Item.Name, Item.Description
+        // if (string.IsNullOrWhiteSpace(item.Name)) { return BadRequest("Item name is required"); }
+
         _catalogRepository.CreateItem(item);
         return Ok();
     }
+
+    // Slet item - Kun admins
     [HttpDelete("items/{id}")]
-public IActionResult DeleteItem(Guid id)
-{
-    _catalogRepository.DeleteItem(id);
-    return Ok();
-}
+    [Authorize(Roles = "Admin")] // Kun brugere i "Admin" rollen kan tilgå dette endpoint
+    public IActionResult DeleteItem(Guid id)
+    {
+        _catalogRepository.DeleteItem(id);
+        return Ok();
+    }
 
-[HttpPut("items/{id}")]
-public IActionResult EditItem(Guid id, [FromBody] Item updatedItem)
-{
-    updatedItem.Id = id; // hvis nødvendigt
-    _catalogRepository.EditItem(updatedItem);
-    return Ok();
-}
+    // Rediger item - Kun admins
+    [HttpPut("items/{id}")]
+    [Authorize(Roles = "Admin")] // Kun brugere i "Admin" rollen kan tilgå dette endpoint
+    public IActionResult EditItem(Guid id, [FromBody] Item updatedItem)
+    {
+        if (updatedItem == null)
+        {
+            _logger.LogError("Updated item cannot be null");
+            return BadRequest("Updated item cannot be null");
+        }
+        // Du kan overveje at tilføje mere validering her
 
+        updatedItem.Id = id; // hvis nødvendigt
+        _catalogRepository.EditItem(updatedItem);
+        return Ok();
+    }
+
+    // Hent alle items - Alle autentificerede brugere (User eller Admin)
     [HttpGet("items")]
+    // [Authorize] er allerede på controller-niveau, så denne er implicit beskyttet
     public IActionResult GetAllItems()
     {
         var items = _catalogRepository.GetAllItems();
         return Ok(items);
     }
+
+    // Hent item efter ID - Alle autentificerede brugere (User eller Admin)
     [HttpGet("items/{id}")]
+    // [Authorize] er allerede på controller-niveau, så denne er implicit beskyttet
     public IActionResult GetItemById(Guid id)
     {
         var item = _catalogRepository.GetItemById(id);
@@ -58,11 +82,13 @@ public IActionResult EditItem(Guid id, [FromBody] Item updatedItem)
             return NotFound();
         return Ok(item);
     }
+
+    // Hent items efter kategori - Alle autentificerede brugere (User eller Admin)
     [HttpGet("items/category/{category}")]
+    // [Authorize] er allerede på controller-niveau, så denne er implicit beskyttet
     public IActionResult GetItemsByCategory(string category)
     {
         var items = _catalogRepository.GetItemsByCategory(category);
         return Ok(items);
     }
-
 }
