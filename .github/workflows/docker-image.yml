@@ -16,7 +16,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0.x' # tilpas hvis I bruger en anden version
+          dotnet-version: '9.0' # tilpas hvis I bruger en anden version
 
       - name: Gendan afhængigheder
         run: dotnet restore GO-CatalogService/GO-CatalogService.sln
