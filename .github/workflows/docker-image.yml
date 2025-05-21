@@ -1,4 +1,4 @@
-name: Byg et Docker Image
+name: MSTest & Push to DockerHub
 
 on:
   push:
@@ -16,15 +16,14 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '9.0' # tilpas hvis I bruger en anden version
-
-      - name: Gendan afhængigheder
+          dotnet-version: '9.0' 
+      - name: Dotnet restore
         run: dotnet restore GO-CatalogService/GO-CatalogService.sln
 
-      - name: Build løsning
+      - name: Build sln
         run: dotnet build GO-CatalogService/GO-CatalogService.sln --no-restore --configuration Release
 
-      - name: Kør tests
+      - name: Run tests
         run: dotnet test GO-CatalogService/GO-CatalogService.sln --no-build --configuration Release
 
   build_and_push:
