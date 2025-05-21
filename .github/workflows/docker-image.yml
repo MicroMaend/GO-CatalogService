@@ -25,7 +25,7 @@ jobs:
         run: dotnet build GO-CatalogService/GO-CatalogService.sln --no-restore --configuration Release
 
       - name: Kør tests
-        run: dotnet test GO-CatalogService/GO-CatalogService.sln --no-build --configuration Release --logger "trx"
+        run: dotnet test GO-CatalogService/GO-CatalogService.sln --no-build --configuration Release
 
   build_and_push:
     name: Build og push Docker image
