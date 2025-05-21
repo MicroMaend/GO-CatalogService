@@ -7,9 +7,30 @@ on:
     branches: ["main"]
 
 jobs:
-  docker_image_pipeline:
-    name: Build Docker image to Docker Hub
+  test:
+    name: Kør .NET tests
     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0' 
+
+      - name: Gendan afhængigheder
+        run: dotnet restore Test-GO-Catalog/Test-GO-Catalog.csproj
+
+      - name: Build testprojekt
+        run: dotnet build Test-GO-Catalog/Test-GO-Catalog.csproj --no-restore --configuration Release
+
+      - name: Kør tests
+        run: dotnet test Test-GO-Catalog/Test-GO-Catalog.csproj --no-build --configuration Release --logger "trx"
+
+  build_and_push:
+    name: Build og push Docker image
+    runs-on: ubuntu-latest
+    needs: test
     permissions:
       packages: write
       contents: read
