@@ -11,8 +11,18 @@ namespace GO_CatalogService.Repository
         public CatalogRepository(string connectionString)
         {
             var client = new MongoClient(connectionString);
-            var database = client.GetDatabase("GO-CatalogServiceDB"); // Hardcoder databasenavn her eller hent fra connection string
+            var database = client.GetDatabase("GO-CatalogServiceDB");
             _items = database.GetCollection<Item>("Items");
+
+            try
+            {
+                var count = _items.EstimatedDocumentCount();
+                Console.WriteLine($"Antal dokumenter i Items-kollektionen ved opstart: {count}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Fejl ved tælling af dokumenter ved opstart: {ex.Message}");
+            }
         }
         public void CreateItem(Item item)
         {
