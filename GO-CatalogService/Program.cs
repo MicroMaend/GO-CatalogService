@@ -13,6 +13,7 @@ using VaultSharp;
 using VaultSharp.V1.AuthMethods.Token;
 using Microsoft.OpenApi.Models; // Denne skal stadig bruges til OpenApiInfo, OpenApiSecurityScheme osv.
 using System; // Til Exception
+using MongoDB.Driver; // Tilføj denne namespace
 
 Console.WriteLine("CatalogService starter...");
 var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings()
@@ -24,7 +25,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Registrér korrekt Guid-serializer for MongoDB
 BsonSerializer.RegisterSerializer(new GuidSerializer(GuidRepresentation.Standard));
 
-// Async Vault secret loader med retry (kopieret fra AuthService/UserService)
+// Async Vault secret loader med retry
 async Task<Dictionary<string, string>> LoadVaultSecretsAsync()
 {
     var retryCount = 0;
@@ -75,15 +76,28 @@ var secretKey = builder.Configuration["Jwt__Secret"];
 var issuer = builder.Configuration["Jwt__Issuer"];
 var audience = builder.Configuration["Jwt__Audience"];
 
-// Print JWT konfiguration til debug
+// Hent CatalogService MongoDB connection string fra Vault (direkte)
+var catalogMongoConnectionString = builder.Configuration["Mongo__CatalogConnectionString"];
+
+// Print JWT og MongoDB konfiguration til debug
 Console.WriteLine($"Jwt__Secret fra Vault i CatalogService: '{secretKey}' (Length: {secretKey?.Length ?? 0})");
 Console.WriteLine($"Jwt__Issuer fra Vault i CatalogService: '{issuer}'");
 Console.WriteLine($"Jwt__Audience fra Vault i CatalogService: '{audience}'");
-
+Console.WriteLine($"Mongo__CatalogConnectionString fra Vault i CatalogService: '{catalogMongoConnectionString}'"); // Logger den hentede connection string
 
 // Add services to the container.
+// Registrer CatalogRepository og injicer connection string fra konfigurationen
+builder.Services.AddSingleton<ICatalogRepository>(provider =>
+{
+    if (string.IsNullOrEmpty(catalogMongoConnectionString))
+    {
+        throw new Exception("MongoDB Catalog connection string mangler fra Vault!");
+    }
+    return new CatalogRepository(catalogMongoConnectionString); // Sender connection string direkte
+});
+
+// Registrer CatalogService, som afhænger af ICatalogRepository
 builder.Services.AddSingleton<CatalogService>();
-builder.Services.AddSingleton<ICatalogRepository, CatalogRepository>();
 
 
 // Tilføj autentificering
@@ -117,7 +131,7 @@ builder.Services.AddAuthorization(options =>
 builder.Services.AddControllers();
 
 // Swashbuckle/Swagger konfiguration
-builder.Services.AddEndpointsApiExplorer(); // Denne er stadig nødvendig for at opdage endpoints
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "CatalogService API", Version = "v1" });
@@ -153,14 +167,14 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger(); // Brug app.UseSwagger() fra Swashbuckle
-    app.UseSwaggerUI(); // Brug app.UseSwaggerUI() fra Swashbuckle
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
 
-app.UseAuthentication(); // Tilføj autentificeringsmiddleware
-app.UseAuthorization(); // Tilføj autoriseringsmiddleware
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllers();
 

@@ -2,20 +2,16 @@
 using GO_CatalogService.Interface;
 using MongoDB.Driver;
 
-
 namespace GO_CatalogService.Repository
 {
-
     public class CatalogRepository : ICatalogRepository
     {
         private readonly IMongoCollection<Item> _items;
 
-        public CatalogRepository(IConfiguration configuration)
+        public CatalogRepository(string connectionString)
         {
-            var connectionString = configuration.GetConnectionString("MongoDb");
             var client = new MongoClient(connectionString);
-            var database = client.GetDatabase("GO-CatalogServiceDB");
-
+            var database = client.GetDatabase("GO-CatalogServiceDB"); // Hardcoder databasenavn her eller hent fra connection string
             _items = database.GetCollection<Item>("Items");
         }
         public void CreateItem(Item item)
