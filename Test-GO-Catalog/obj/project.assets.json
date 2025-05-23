@@ -34,7 +34,7 @@
           }
         }
       },
-      "GOCore/1.1.3": {
+      "GOCore/1.2.1": {
         "type": "package",
         "compile": {
           "lib/net8.0/GOCore.dll": {}
@@ -1220,7 +1220,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
-          "GOCore": "1.1.3",
+          "GOCore": "1.2.1",
           "Microsoft.AspNetCore.OpenApi": "9.0.4",
           "MongoDB.Driver": "3.4.0",
           "Moq": "4.20.72",
@@ -1290,14 +1290,14 @@
         "lib/netstandard2.1/DnsClient.xml"
       ]
     },
-    "GOCore/1.1.3": {
-      "sha512": "A6Ntme0YRgF93CaxU/1hkL6m3L0NkStrzkHP9T3nwoCYoiWfxMsS5AGqbnAIATyYP4JiVNK1gOuXCFeJrX92lg==",
+    "GOCore/1.2.1": {
+      "sha512": "T2PgVfBB64wbjIVljLy9zXSlhW2zJEb2kQb4xEn+3YaMLl7WXU/RiaOoo7lG+V5nHbEvisAjj6/7hyYVvh0sag==",
       "type": "package",
-      "path": "gocore/1.1.3",
+      "path": "gocore/1.2.1",
       "files": [
         ".nupkg.metadata",
         "IconforGoCore.png",
-        "gocore.1.1.3.nupkg.sha512",
+        "gocore.1.2.1.nupkg.sha512",
         "gocore.nuspec",
         "lib/net8.0/GOCore.dll"
       ]
@@ -3135,7 +3135,7 @@
       "MSTest >= 3.6.4",
       "Microsoft.NET.Test.Sdk >= 17.12.0",
       "Moq >= 4.20.72",
-      "gocore >= 1.1.3"
+      "gocore >= 1.2.1"
     ]
   },
   "packageFolders": {
@@ -3209,7 +3209,7 @@
           },
           "gocore": {
             "target": "Package",
-            "version": "[1.1.3, )"
+            "version": "[1.2.1, )"
           }
         },
         "imports": [

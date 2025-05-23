@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "H0gb5ox26kc=",
+  "dgSpecHash": "vdf/7Gu8KIE=",
   "success": true,
   "projectFilePath": "C:\\Users\\marcu\\Desktop\\Projekt - 4. Semester\\GO-CatalogService\\Test-GO-Catalog\\Test-GO-Catalog.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marcu\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\marcu\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
-    "C:\\Users\\marcu\\.nuget\\packages\\gocore\\1.1.3\\gocore.1.1.3.nupkg.sha512",
+    "C:\\Users\\marcu\\.nuget\\packages\\gocore\\1.2.1\\gocore.1.2.1.nupkg.sha512",
     "C:\\Users\\marcu\\.nuget\\packages\\microsoft.applicationinsights\\2.22.0\\microsoft.applicationinsights.2.22.0.nupkg.sha512",
     "C:\\Users\\marcu\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.4\\microsoft.aspnetcore.openapi.9.0.4.nupkg.sha512",
     "C:\\Users\\marcu\\.nuget\\packages\\microsoft.codecoverage\\17.12.0\\microsoft.codecoverage.17.12.0.nupkg.sha512",
