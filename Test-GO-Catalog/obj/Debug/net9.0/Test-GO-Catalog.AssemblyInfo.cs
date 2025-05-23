@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Test-GO-Catalog")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c011d5d8c15ab7fb8199387eabbe579c91b6c8b2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+95d430d32c1ca8e129137539582885c8c430ae69")]
 [assembly: System.Reflection.AssemblyProductAttribute("Test-GO-Catalog")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Test-GO-Catalog")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
