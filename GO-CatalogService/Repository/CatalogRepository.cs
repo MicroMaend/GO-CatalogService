@@ -2,21 +2,27 @@
 using GO_CatalogService.Interface;
 using MongoDB.Driver;
 
-
 namespace GO_CatalogService.Repository
 {
-
     public class CatalogRepository : ICatalogRepository
     {
         private readonly IMongoCollection<Item> _items;
 
-        public CatalogRepository(IConfiguration configuration)
+        public CatalogRepository(string connectionString)
         {
-            var connectionString = configuration.GetConnectionString("MongoDb");
             var client = new MongoClient(connectionString);
             var database = client.GetDatabase("GO-CatalogServiceDB");
-
             _items = database.GetCollection<Item>("Items");
+
+            try
+            {
+                var count = _items.EstimatedDocumentCount();
+                Console.WriteLine($"Antal dokumenter i Items-kollektionen ved opstart: {count}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Fejl ved tælling af dokumenter ved opstart: {ex.Message}");
+            }
         }
         public void CreateItem(Item item)
         {

@@ -1,0 +1,63 @@
+name: MSTest & Push to DockerHub
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  test:
+    name: Run MSTests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0' 
+      - name: Dotnet restore
+        run: dotnet restore GO-CatalogService/GO-CatalogService.sln
+
+      - name: Build sln
+        run: dotnet build GO-CatalogService/GO-CatalogService.sln --no-restore --configuration Release
+
+      - name: Run tests
+        run: dotnet test GO-CatalogService/GO-CatalogService.sln --no-build --configuration Release
+
+  build_and_push:
+    name: Build og push Docker image
+    runs-on: ubuntu-latest
+    needs: test
+    permissions:
+      packages: write
+      contents: read
+      attestations: write
+      id-token: write
+    env:
+      DOCKER_USER: ${{ secrets.DOCKER_USER }}
+      IMAGE_NAME: go-catalogservice
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set dynamic image version
+        id: vars
+        run: echo "IMAGE_VERSION=$(date +%Y%m%d)-${GITHUB_SHA::7}" >> $GITHUB_ENV
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+
+      - name: Build the Docker image
+        run: |
+          docker build . -f GO-CatalogService/Dockerfile \
+          -t ${DOCKER_USER}/${IMAGE_NAME}:${IMAGE_VERSION} \
+          -t ${DOCKER_USER}/${IMAGE_NAME}:latest
+
+      - name: Push Docker image to Docker Hub
+        run: |
+          docker push ${DOCKER_USER}/${IMAGE_NAME}:${IMAGE_VERSION}
+          docker push ${DOCKER_USER}/${IMAGE_NAME}:latest
