@@ -8,7 +8,6 @@ namespace GO_Bidding.Controllers; // Bemærk: Namespace er GO_Bidding.Controller
 
 [ApiController]
 [Route("catalog")]
-[Authorize] // Kræver et gyldigt JWT for alle endpoints i denne controller
 public class CatalogController : ControllerBase
 {
     private readonly ICatalogRepository _catalogRepository;
@@ -63,18 +62,18 @@ public class CatalogController : ControllerBase
         return Ok();
     }
 
-    // Hent alle items - Alle autentificerede brugere (User eller Admin)
+   
     [HttpGet("items")]
-    // [Authorize] er allerede på controller-niveau, så denne er implicit beskyttet
+    [AllowAnonymous]
     public IActionResult GetAllItems()
     {
         var items = _catalogRepository.GetAllItems();
         return Ok(items);
     }
 
-    // Hent item efter ID - Alle autentificerede brugere (User eller Admin)
+  
     [HttpGet("items/{id}")]
-    // [Authorize] er allerede på controller-niveau, så denne er implicit beskyttet
+    [AllowAnonymous]
     public IActionResult GetItemById(Guid id)
     {
         var item = _catalogRepository.GetItemById(id);
@@ -83,9 +82,9 @@ public class CatalogController : ControllerBase
         return Ok(item);
     }
 
-    // Hent items efter kategori - Alle autentificerede brugere (User eller Admin)
+   
     [HttpGet("items/category/{category}")]
-    // [Authorize] er allerede på controller-niveau, så denne er implicit beskyttet
+    [AllowAnonymous]
     public IActionResult GetItemsByCategory(string category)
     {
         var items = _catalogRepository.GetItemsByCategory(category);
